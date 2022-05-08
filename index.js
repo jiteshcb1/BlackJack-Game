@@ -9,9 +9,10 @@ let cardsEl = document.getElementById("cards-el")
 let playerEl = document.getElementById("player-el")
 
 let player = {
-    name : prompt("enter name"),
+    name : prompt(),
     chips : 1450
 } 
+
 
 playerEl.textContent = player.name + " : ₹" + player.chips
 
@@ -27,6 +28,7 @@ function getRandomCard(){
 }
 
 function startGame(){
+//    hasBlackJack = false;
     isAlive = true
     let firstCard = getRandomCard()
     let secondCard = getRandomCard()
@@ -58,7 +60,7 @@ function renderGame(){
 
 
 function newCard(){
-    if(isAlive === true && hasBlackJack === false){
+    if(isAlive === true && hasBlackJack === true){
         let card = getRandomCard()
         sum += card;
         cards.push(card)
